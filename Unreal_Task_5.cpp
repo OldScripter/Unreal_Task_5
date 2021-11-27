@@ -7,11 +7,11 @@
 
 int main()
 {
-    const int size{ 10 };
-    int arr[size][size];
-    for (int i = 0; i < size; ++i)
+    const int N{ 10 };
+    int arr[N][N];
+    for (int i = 0; i < N; ++i)
     {
-        for (int j = 0; j < size; ++j)
+        for (int j = 0; j < N; ++j)
         {
             arr[i][j] = i + j;
             std::cout << arr[i][j] << "\t";
@@ -23,14 +23,14 @@ int main()
     std::tm* now = std::localtime(&t);
     int day = now->tm_mday;
     std::cout << "Today's day of month is: " << day << "\n";
-    int rowIndex = day % size;
+    int rowIndex = day % N;
     std::cout << "Row index is: " << rowIndex << "\n";
 
     int summ{ 0 };
-    for (int j = 0; j < size; ++j)
+    for (int j = 0; j < N; ++j)
     {
         std::cout << arr[rowIndex][j];
-        if (j == size - 1) std::cout << " = "; else std::cout << " + ";
+        if (j == N - 1) std::cout << " = "; else std::cout << " + ";
         summ += arr[rowIndex][j];
     }
     std::cout << summ << "\n";
